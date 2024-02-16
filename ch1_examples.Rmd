@@ -1,0 +1,41 @@
+---
+title: "Chapter 1. Examples of Survival Data"
+author: "Li-Hsin Chien"
+date: "2024-02-11"
+output: html_document
+---
+
+教科書: Klein & Moeschberger, Survival Analysis: Techniques for Censored and Truncated Data, 2nd 
+
+教科書中的資料可以從 R Package‘KMsurv’ 取得。 
+
+```{r warning = FALSE, eco=FALSE, message = FALSE}
+#install.packages("KMsurv")
+library(KMsurv)
+```
+
+### 1.2 Remission Duration from a Clinical Trial for Acute Leukemia (*drug6mp*)
+
+```{r }
+data(drug6mp)
+#?drug6mp
+drug6mp
+```
+
+### 1.3 Bone Marrow Transplantation for Leukemia (*bmt*)
+
+```{r}
+data(bmt)
+#?bmt
+bmt
+```
+
+### 1.4 Times to Infectionof Kidney Dialysis Patients (*kidney*)
+
+```{r}
+data(kidney)
+#?kidney
+kidney
+```
+
+
