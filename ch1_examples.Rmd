@@ -2,7 +2,7 @@
 title: "Chapter 1. Examples of Survival Data"
 author: "Li-Hsin Chien"
 date: "2024-02-11"
-output: html_document
+output: github_document
 ---
 
 教科書: Klein & Moeschberger, Survival Analysis: Techniques for Censored and Truncated Data, 2nd 
