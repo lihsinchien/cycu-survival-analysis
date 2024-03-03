@@ -3,7 +3,7 @@ Ch4 KM estimator
 Li-Hsin Chien
 2024-03-03
 
-# 1 Kaplan-Meier(KM) estimator
+# Kaplan-Meier(KM) estimator
 
 KM estimator $\hat{S}(t)$ 用無母數的方式估計存活函數 $S(t)$。
 
