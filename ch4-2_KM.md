@@ -84,7 +84,7 @@ summary(fit)
 畫出 $\hat{S}(t)$
 
 ``` r
-plot(fit, xlab="t",ylab="KM estimator",main=expression(hat(S)(t)))
+plot(fit, xlab="t",ylab="estimated S(t)",main=expression(paste("KM estimator: ",hat(S)(t))))
 ```
 
 ![](ch4-2_KM_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
