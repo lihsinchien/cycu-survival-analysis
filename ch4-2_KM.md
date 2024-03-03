@@ -82,7 +82,7 @@ summary(fit)
 - upper 95% CI: $\hat{S}(t_i)$ 95% 信賴區間上界。
 
 ``` r
-plot(fit)
+plot(fit, xlab="t",ylab="KM estimator",main=expression(hat(S)(t)))
 ```
 
 ![](ch4-2_KM_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
