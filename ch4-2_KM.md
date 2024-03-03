@@ -81,7 +81,7 @@ summary(fit)
 
 - upper 95% CI: $\hat{S}(t_i)$ 95% 信賴區間上界。
 
-畫出 $\hat(S)(t)$
+畫出 $\hat{S}(t)$
 
 ``` r
 plot(fit, xlab="t",ylab="KM estimator",main=expression(hat(S)(t)))
