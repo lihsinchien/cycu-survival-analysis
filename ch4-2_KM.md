@@ -88,3 +88,41 @@ plot(fit, xlab="t",ylab="estimated S(t)",main=expression(paste("KM estimator: ",
 ```
 
 ![](ch4-2_KM_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+# Nelson-Aalen estimator (估計 cumulative hazard function)
+
+*survfit* 指令中，cumulative hazard function 的估計方式預設值為
+Nelson-Aalen estimator，估計的結果存在 *cumhaz* 中。
+
+``` r
+#?survfit.object #查詢 survfit 指令有哪些 output
+names(summary(fit))
+```
+
+    ##  [1] "n"             "time"          "n.risk"        "n.event"      
+    ##  [5] "n.censor"      "surv"          "std.err"       "cumhaz"       
+    ##  [9] "std.chaz"      "type"          "logse"         "conf.int"     
+    ## [13] "conf.type"     "lower"         "upper"         "call"         
+    ## [17] "table"         "rmean.endtime"
+
+``` r
+data.frame(fit$time,fit$n.risk,fit$n.event,fit$cumhaz)
+```
+
+    ##    fit.time fit.n.risk fit.n.event fit.cumhaz
+    ## 1         6         21           3  0.1428571
+    ## 2         7         17           1  0.2016807
+    ## 3         9         16           0  0.2016807
+    ## 4        10         15           1  0.2683473
+    ## 5        11         13           0  0.2683473
+    ## 6        13         12           1  0.3516807
+    ## 7        16         11           1  0.4425898
+    ## 8        17         10           0  0.4425898
+    ## 9        19          9           0  0.4425898
+    ## 10       20          8           0  0.4425898
+    ## 11       22          7           1  0.5854469
+    ## 12       23          6           1  0.7521136
+    ## 13       25          5           0  0.7521136
+    ## 14       32          4           0  0.7521136
+    ## 15       34          2           0  0.7521136
+    ## 16       35          1           0  0.7521136
