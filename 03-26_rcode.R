@@ -47,4 +47,25 @@ int<-c(2,1,2,2,4,6,8,12,16,NA)
 h_m<-data$weaned/(int*(y-data$weaned/2))
 (data4<-data.frame(data,"Y"=y,"S1"=round(S_1,digits=4),"hm"=round(h_m,digits=4)))
 
+################
+library(KMsurv)
+data(bmt)
+head(bmt)
+data.all<-bmt[bmt$group==1,]
+dim(data.all)
 
+d<-data.all$d3
+t<-data.all$t2
+
+r0<-survfit(Surv(t,d)~1)
+r1 <- survfit(Surv(t,d)~1, conf.type="plain")
+r2 <- survfit(Surv(t,d)~1, conf.type="log")
+r3 <- survfit(Surv(t,d)~1, conf.type="log-log")
+r4 <- survfit(Surv(t,d)~1, conf.type="logit")
+r5 <- survfit(Surv(t,d)~1, conf.type="arcsin")
+rbind(summary(r0,time=365),
+summary(r1,time=365),
+summary(r2,time=365),
+summary(r3,time=365),
+summary(r4,time=365),
+summary(r5,time=365))
