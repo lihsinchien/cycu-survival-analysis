@@ -60,12 +60,16 @@ plot(r.km, xlab = "Time to death(in weeks)",ylab = "Survival fuction")
 
 ```{r}
 #S(12)
-round(summary(r.km)$surv[sum(summary(r.km)$time<=12)],digits=3)
-round(summary(r.km)$std.err[sum(summary(r.km)$time<=12)],digits=3)
+#round(summary(r.km)$surv[sum(summary(r.km)$time<=12)],digits=3)
+#round(summary(r.km)$std.err[sum(summary(r.km)$time<=12)],digits=3)
+summary(r.km,12)
+
 
 #S(60)
-round(summary(r.km)$surv[sum(summary(r.km)$time<=60)],digits=3)
-round(summary(r.km)$std.err[sum(summary(r.km)$time<=60)],digits=3)
+#round(summary(r.km)$surv[sum(summary(r.km)$time<=60)],digits=3)
+#round(summary(r.km)$std.err[sum(summary(r.km)$time<=60)],digits=3)
+summary(r.km,60)
+
 
 ```
 $\hat{S}(12) = 0.904$, standard error $se(\hat{S}(12)) = 0.041$  
