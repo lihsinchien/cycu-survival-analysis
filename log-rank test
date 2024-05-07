@@ -1,0 +1,28 @@
+library(ISLR2)
+
+attach(BrainCancer)
+library(survival)
+
+fit.sex <- survfit(Surv(time, status) ~ sex)
+plot(fit.sex, xlab = "Months",
+     ylab = "Estimated Probability of Survival", col = c(2,4))
+legend("bottomleft", levels(sex), col = c(2,4), lty = 1)
+
+## log-rank test
+
+logrank.test <- survdiff(Surv(time, status) ~ sex)
+logrank.test
+
+## PHM
+
+fit.cox <- coxph(Surv(time, status) ~ sex)
+summary(fit.cox)
+
+summary(fit.cox)$logtest[1]
+summary(fit.cox)$waldtest[1]
+summary(fit.cox)$sctest[1]
+
+logrank.test$chisq # the score test from the Cox model is exactly equal to the log rank test statistic
+
+fit.all <- coxph(  Surv(time, status) ~ sex + diagnosis + loc + ki + gtv +    stereo)
+fit.all
